@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Battleship</string>
+    <string name="LoginTitle">Sign-in</string>
+    <string name="LabelLogin">Login</string>
+    <string name="labelPassword">Password</string>
+    <string name="SignUpTitle">Sign-Up</string>
+    <string name="labelEmail">E-mail</string>
+    <string name="labelConfirmPassword">Confirm Password</string>
+    <string name="buttonCancel">Cancel</string>
+    <string name="buttonOkay">Okay</string>
+    <string name="buttonSignIn">Sign-in</string>
+    <string name="buttonSignUp">Sign-up</string>
 </resources>
