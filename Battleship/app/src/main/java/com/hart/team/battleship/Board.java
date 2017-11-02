@@ -5,6 +5,14 @@ import android.os.Bundle;
 
 public class Board extends AppCompatActivity {
 
+    int UserScore;
+
+    protected void CalculateScore () {
+
+    }
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

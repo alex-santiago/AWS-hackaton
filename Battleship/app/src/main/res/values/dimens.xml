@@ -2,6 +2,14 @@
 <resources>
     <dimen name="activity_horizontal_margin">10dp</dimen>
     <dimen name="activity_vertical_margin">10dp</dimen>
-    <dimen name="MainTitleSize">50sp</dimen>
+    <dimen name="MainTitleSize">60sp</dimen>
     <dimen name="ActivityTitle">30sp</dimen>
+    <dimen name="BoardButtonSize">50dp</dimen>
+    <dimen name="LabelPadding">3dp</dimen>
+    <dimen name="LabelMargin">3dp</dimen>
+    <dimen name="CommandWidth">100dp</dimen>
+    <dimen name="ButtonFire">65dp</dimen>
+    <dimen name="Buttonoptions">100dp</dimen>
+    <dimen name="ButtonOptions">50dp</dimen>
+    <dimen name="LabelSize">20sp</dimen>
 </resources>

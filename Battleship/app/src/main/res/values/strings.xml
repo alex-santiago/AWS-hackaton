@@ -10,4 +10,8 @@
     <string name="buttonOkay">Okay</string>
     <string name="buttonSignIn">Sign-in</string>
     <string name="buttonSignUp">Sign-up</string>
+    <string name="labelCommand">Command:</string>
+    <string name="btnFire">Fire</string>
+    <string name="ButtonNew">New Game</string>
+    <string name="ButtonLeaders">Leaders</string>
 </resources>
