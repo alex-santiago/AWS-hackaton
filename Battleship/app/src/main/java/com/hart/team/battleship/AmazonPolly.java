@@ -47,7 +47,7 @@ public class AmazonPolly extends Activity {
     private static final String COGNITO_POOL_ID = "CHANGEME";
     MediaPlayer mediaPlayer;
 
-    public void AmazonPolly() {
+    public AmazonPolly() {
 
         initPollyClient();
     }
