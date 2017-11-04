@@ -34,6 +34,8 @@ public class MainLogin extends AppCompatActivity
         btnLogin.setOnClickListener(this);
         btnSignup.setOnClickListener(this);
 
+        AmazonPolly test = new AmazonPolly(getApplicationContext());
+        //test.ReadText("HELLO WORLD");
     }
 
     @Override
