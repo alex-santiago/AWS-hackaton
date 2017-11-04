@@ -1,8 +1,6 @@
 package com.hart.team.battleship;
 import java.util.*;
-/**
- * Created by Tiago on 2017-11-04.
- */
+
 
 public class Ship {
 
@@ -32,7 +30,8 @@ public class Ship {
 
     public int Hits;
 
-    public boolean GotHit(String hit) {
+    public boolean GotHit(int row, int column) {
+        String hit = row+","+column;
         if(Arrays.asList(ShipPositions).contains(hit)){
             Hits++;
             return true;
