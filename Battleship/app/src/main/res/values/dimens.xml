@@ -12,4 +12,5 @@
     <dimen name="Buttonoptions">100dp</dimen>
     <dimen name="ButtonOptions">50dp</dimen>
     <dimen name="LabelSize">20sp</dimen>
+    <dimen name="BoardButtonTextSize">10sp</dimen>
 </resources>

@@ -106,27 +106,32 @@
                 <Button
                     android:id="@+id/btnA1"
                     android:layout_width="@dimen/BoardButtonSize"
-                    android:layout_height="@dimen/BoardButtonSize" />
+                    android:layout_height="@dimen/BoardButtonSize"
+                    android:textSize="@dimen/BoardButtonTextSize" />
 
                 <Button
                     android:id="@+id/btnB1"
                     android:layout_width="@dimen/BoardButtonSize"
-                    android:layout_height="@dimen/BoardButtonSize" />
+                    android:layout_height="@dimen/BoardButtonSize"
+                    android:textSize="@dimen/BoardButtonTextSize" />
 
                 <Button
                     android:id="@+id/btnC1"
                     android:layout_width="@dimen/BoardButtonSize"
-                    android:layout_height="@dimen/BoardButtonSize" />
+                    android:layout_height="@dimen/BoardButtonSize"
+                    android:textSize="@dimen/BoardButtonTextSize" />
 
                 <Button
                     android:id="@+id/btnD1"
                     android:layout_width="@dimen/BoardButtonSize"
-                    android:layout_height="@dimen/BoardButtonSize" />
+                    android:layout_height="@dimen/BoardButtonSize"
+                    android:textSize="@dimen/BoardButtonTextSize" />
 
                 <Button
                     android:id="@+id/btnE1"
                     android:layout_width="@dimen/BoardButtonSize"
-                    android:layout_height="@dimen/BoardButtonSize" />
+                    android:layout_height="@dimen/BoardButtonSize"
+                    android:textSize="@dimen/BoardButtonTextSize" />
             </TableRow>
 
             <TableRow
@@ -146,27 +151,32 @@
                 <Button
                     android:id="@+id/btnA2"
                     android:layout_width="@dimen/BoardButtonSize"
-                    android:layout_height="@dimen/BoardButtonSize" />
+                    android:layout_height="@dimen/BoardButtonSize"
+                    android:textSize="@dimen/BoardButtonTextSize" />
 
                 <Button
                     android:id="@+id/btnB2"
                     android:layout_width="@dimen/BoardButtonSize"
-                    android:layout_height="@dimen/BoardButtonSize" />
+                    android:layout_height="@dimen/BoardButtonSize"
+                    android:textSize="@dimen/BoardButtonTextSize" />
 
                 <Button
                     android:id="@+id/btnC2"
                     android:layout_width="@dimen/BoardButtonSize"
-                    android:layout_height="@dimen/BoardButtonSize" />
+                    android:layout_height="@dimen/BoardButtonSize"
+                    android:textSize="@dimen/BoardButtonTextSize" />
 
                 <Button
                     android:id="@+id/btnD2"
                     android:layout_width="@dimen/BoardButtonSize"
-                    android:layout_height="@dimen/BoardButtonSize" />
+                    android:layout_height="@dimen/BoardButtonSize"
+                    android:textSize="@dimen/BoardButtonTextSize" />
 
                 <Button
                     android:id="@+id/btnE2"
                     android:layout_width="@dimen/BoardButtonSize"
-                    android:layout_height="@dimen/BoardButtonSize" />
+                    android:layout_height="@dimen/BoardButtonSize"
+                    android:textSize="@dimen/BoardButtonTextSize" />
             </TableRow>
 
             <TableRow
@@ -186,27 +196,32 @@
                 <Button
                     android:id="@+id/btnA3"
                     android:layout_width="@dimen/BoardButtonSize"
-                    android:layout_height="@dimen/BoardButtonSize" />
+                    android:layout_height="@dimen/BoardButtonSize"
+                    android:textSize="@dimen/BoardButtonTextSize" />
 
                 <Button
                     android:id="@+id/btnB3"
                     android:layout_width="@dimen/BoardButtonSize"
-                    android:layout_height="@dimen/BoardButtonSize" />
+                    android:layout_height="@dimen/BoardButtonSize"
+                    android:textSize="@dimen/BoardButtonTextSize" />
 
                 <Button
                     android:id="@+id/btnC3"
                     android:layout_width="@dimen/BoardButtonSize"
-                    android:layout_height="@dimen/BoardButtonSize" />
+                    android:layout_height="@dimen/BoardButtonSize"
+                    android:textSize="@dimen/BoardButtonTextSize" />
 
                 <Button
                     android:id="@+id/btnD3"
                     android:layout_width="@dimen/BoardButtonSize"
-                    android:layout_height="@dimen/BoardButtonSize" />
+                    android:layout_height="@dimen/BoardButtonSize"
+                    android:textSize="@dimen/BoardButtonTextSize" />
 
                 <Button
                     android:id="@+id/btnE3"
                     android:layout_width="@dimen/BoardButtonSize"
-                    android:layout_height="@dimen/BoardButtonSize" />
+                    android:layout_height="@dimen/BoardButtonSize"
+                    android:textSize="@dimen/BoardButtonTextSize" />
             </TableRow>
 
             <TableRow
@@ -226,27 +241,32 @@
                 <Button
                     android:id="@+id/btnA4"
                     android:layout_width="@dimen/BoardButtonSize"
-                    android:layout_height="@dimen/BoardButtonSize" />
+                    android:layout_height="@dimen/BoardButtonSize"
+                    android:textSize="@dimen/BoardButtonTextSize" />
 
                 <Button
                     android:id="@+id/btnB4"
                     android:layout_width="@dimen/BoardButtonSize"
-                    android:layout_height="@dimen/BoardButtonSize" />
+                    android:layout_height="@dimen/BoardButtonSize"
+                    android:textSize="@dimen/BoardButtonTextSize" />
 
                 <Button
                     android:id="@+id/btnC4"
                     android:layout_width="@dimen/BoardButtonSize"
-                    android:layout_height="@dimen/BoardButtonSize" />
+                    android:layout_height="@dimen/BoardButtonSize"
+                    android:textSize="@dimen/BoardButtonTextSize" />
 
                 <Button
                     android:id="@+id/btnD4"
                     android:layout_width="@dimen/BoardButtonSize"
-                    android:layout_height="@dimen/BoardButtonSize" />
+                    android:layout_height="@dimen/BoardButtonSize"
+                    android:textSize="@dimen/BoardButtonTextSize" />
 
                 <Button
                     android:id="@+id/btnE4"
                     android:layout_width="@dimen/BoardButtonSize"
-                    android:layout_height="@dimen/BoardButtonSize" />
+                    android:layout_height="@dimen/BoardButtonSize"
+                    android:textSize="@dimen/BoardButtonTextSize" />
             </TableRow>
 
             <TableRow
@@ -266,27 +286,32 @@
                 <Button
                     android:id="@+id/btnA5"
                     android:layout_width="@dimen/BoardButtonSize"
-                    android:layout_height="@dimen/BoardButtonSize" />
+                    android:layout_height="@dimen/BoardButtonSize"
+                    android:textSize="@dimen/BoardButtonTextSize" />
 
                 <Button
                     android:id="@+id/btnB5"
                     android:layout_width="@dimen/BoardButtonSize"
-                    android:layout_height="@dimen/BoardButtonSize" />
+                    android:layout_height="@dimen/BoardButtonSize"
+                    android:textSize="@dimen/BoardButtonTextSize" />
 
                 <Button
                     android:id="@+id/btnC5"
                     android:layout_width="@dimen/BoardButtonSize"
-                    android:layout_height="@dimen/BoardButtonSize" />
+                    android:layout_height="@dimen/BoardButtonSize"
+                    android:textSize="@dimen/BoardButtonTextSize" />
 
                 <Button
                     android:id="@+id/btnD5"
                     android:layout_width="@dimen/BoardButtonSize"
-                    android:layout_height="@dimen/BoardButtonSize" />
+                    android:layout_height="@dimen/BoardButtonSize"
+                    android:textSize="@dimen/BoardButtonTextSize" />
 
                 <Button
                     android:id="@+id/btnE5"
                     android:layout_width="@dimen/BoardButtonSize"
-                    android:layout_height="@dimen/BoardButtonSize" />
+                    android:layout_height="@dimen/BoardButtonSize"
+                    android:textSize="@dimen/BoardButtonTextSize" />
             </TableRow>
         </TableLayout>
 
@@ -317,14 +342,13 @@
             app:layout_constraintTop_toTopOf="@+id/tableLayout" />
 
         <TextView
-            android:id="@+id/LabelScore"
-            android:layout_width="wrap_content"
+            android:id="@+id/labelScore"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="999"
             android:textSize="@dimen/LabelSize"
             app:layout_constraintBottom_toBottomOf="@+id/btnNew"
             app:layout_constraintEnd_toStartOf="@+id/btnLeaders"
@@ -349,8 +373,8 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:ems="10"
+            android:hint="Coordinates"
             android:inputType="textPersonName"
-            android:text="Name"
             app:layout_constraintStart_toEndOf="@+id/LabelCommand"
             app:layout_constraintTop_toBottomOf="@+id/btnNew" />
 
