@@ -386,6 +386,25 @@
             android:text="@string/btnFire"
             app:layout_constraintEnd_toEndOf="@+id/btnLeaders"
             app:layout_constraintTop_toBottomOf="@+id/btnLeaders" />
+
+        <TextView
+            android:id="@+id/labelAmmoLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/labelAmmoLeft"
+            android:textSize="@dimen/LabelSize"
+            app:layout_constraintEnd_toEndOf="@+id/LabelCommand"
+            app:layout_constraintTop_toBottomOf="@+id/LabelCommand" />
+
+        <TextView
+            android:id="@+id/labelAmmo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="@dimen/LabelSize"
+            app:layout_constraintStart_toStartOf="@+id/editCommand"
+            app:layout_constraintTop_toBottomOf="@+id/LabelCommand" />
     </android.support.constraint.ConstraintLayout>
 
 </RelativeLayout>

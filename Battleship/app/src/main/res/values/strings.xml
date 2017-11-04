@@ -15,4 +15,5 @@
     <string name="ButtonNew">New Game</string>
     <string name="ButtonLeaders">Leaders</string>
     <string name="labelLeaderBoardTitle">Leader Board</string>
+    <string name="labelAmmoLeft">Ammo Left:</string>
 </resources>

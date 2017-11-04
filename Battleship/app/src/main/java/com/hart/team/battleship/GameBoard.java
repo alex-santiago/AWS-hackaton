@@ -15,15 +15,17 @@ public class GameBoard {
     private final int BOARD_SIZE = 5;
     private final int MAX_AMMO = 15;
 
-    public int AmmoUsed;
-    public int AmmoAvailable;
+    private int AmmoUsed;
+    private int AmmoAvailable;
 
     private cell[][] board;
     private Ship[] Ships;
     private int UserScore;
 
     private Ship Ship1;
+    private Boolean Ship1Destroyed;
     private Ship Ship2;
+    private Boolean Ship2Destroyed;
     private Ship Ship3;
 
     GameBoard() {
@@ -43,6 +45,8 @@ public class GameBoard {
         AmmoAvailable = MAX_AMMO - AmmoUsed;
 
         UserScore = 0;
+        Ship1Destroyed = false;
+        Ship2Destroyed = false;
 
         ShipPositionGenerator shipGenerator = new ShipPositionGenerator(BOARD_SIZE, BOARD_SIZE);
 
@@ -62,19 +66,38 @@ public class GameBoard {
     }
 
     private void UpdateAmmo(){
-        AmmoUsed =+1;
+        AmmoUsed +=1;
         AmmoAvailable = MAX_AMMO - AmmoUsed;
     }
 
     private void UpdateScore(int row, int column){
         if (itIsAHit(row, column)) {
-            UserScore =+10;
+            UserScore +=5;
+        }
+        if (!Ship1Destroyed) {
+            if (Ship1.IsDestroyed()) {
+                Ship1Destroyed = true;
+                UserScore +=10;
+            }
+
+        }
+        if (!Ship2Destroyed) {
+            if (Ship2.IsDestroyed()) {
+                Ship2Destroyed = true;
+                UserScore +=10;
+            }
+        }
+        if (isGameOver()){
+            UserScore = UserScore + (AmmoAvailable * 10);
         }
     }
 
     public int getUserScore() { return UserScore; }
 
+    public int getAmmoAvailable() { return AmmoAvailable; }
+
     public void fireAtPosition(int row, int column) {
+        UpdateAmmo();
         if (itIsAHit(row, column)) {
             board[row][column] = cell.Hit;
             UpdateScore(row,column);
@@ -82,7 +105,6 @@ public class GameBoard {
         else {
             board[row][column] = cell.Miss;
         }
-        UpdateAmmo();
     }
 
     public Boolean itIsAHit(int row, int column) {
@@ -98,7 +120,7 @@ public class GameBoard {
     }
 
     public Boolean isGameOver() {
-        if (AmmoAvailable == 0) {
+        if ( (AmmoAvailable == 0) || (Ship1.IsDestroyed() && Ship2.IsDestroyed())) {
             return true;
         }
         else {

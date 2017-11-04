@@ -13,6 +13,7 @@ public class Board extends AppCompatActivity
         implements View.OnClickListener {
 
     private TextView labelScore;
+    private TextView labelAmmo;
 
     private EditText editCommand;
 
@@ -50,6 +51,11 @@ public class Board extends AppCompatActivity
     private Button btnE4;
     private Button btnE5;
 
+    private GameBoard board;
+
+    private AmazonPolly polly;
+
+    // persistent variables
     private int UserScore;
 
     private String boardRow1;
@@ -58,14 +64,13 @@ public class Board extends AppCompatActivity
     private String boardRow4;
     private String boardRow5;
 
-    private GameBoard board;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_board);
 
         labelScore = findViewById(R.id.labelScore);
+        labelAmmo = findViewById(R.id.labelAmmo);
 
         editCommand = findViewById(R.id.editCommand);
 
@@ -137,11 +142,16 @@ public class Board extends AppCompatActivity
         btnE4.setOnClickListener(this);
         btnE5.setOnClickListener(this);
 
-        board = new GameBoard();
+
+        polly = new AmazonPolly(this);
+
+        InitGameBoard ();
     }
 
     @Override
     public void onClick(View v) {
+        String cmd = "";
+
         switch (v.getId()) {
             case R.id.btnA1:
                 MarkBoard(btnA1, 0, 0);
@@ -224,7 +234,8 @@ public class Board extends AppCompatActivity
                 break;
 
             case R.id.btnFire:
-                PassCommand();
+                cmd = getCommand();
+                PassCommand(cmd);
                 break;
 
             case R.id.btnNew:
@@ -238,7 +249,10 @@ public class Board extends AppCompatActivity
     }
 
     protected void InitGameBoard () {
+        board = new GameBoard();
+
         labelScore.setText("0");
+        labelAmmo.setText(Integer.toString(board.getAmmoAvailable()));
 
         editCommand.setText("");
 
@@ -274,8 +288,101 @@ public class Board extends AppCompatActivity
 
     }
 
-    protected void PassCommand () {
+    protected void PassCommand (String cmd) {
+        polly.ReadText(cmd);
 
+        switch (cmd.toUpperCase()) {
+            case "A1":
+                MarkBoard(btnA1, 0, 0);
+                break;
+            case "A2":
+                MarkBoard(btnA2, 1, 0);
+                break;
+            case "A3":
+                MarkBoard(btnA3, 2, 0);
+                break;
+            case "A4":
+                MarkBoard(btnA4, 3, 0);
+                break;
+            case "A5":
+                MarkBoard(btnA5, 4, 0);
+                break;
+
+            case "B1":
+                MarkBoard(btnB1, 0, 1);
+                break;
+            case "B2":
+                MarkBoard(btnB2, 1, 1);
+                break;
+            case "B3":
+                MarkBoard(btnB3, 2, 1);
+                break;
+            case "B4":
+                MarkBoard(btnB4, 3, 1);
+                break;
+            case "B5":
+                MarkBoard(btnB5, 4, 1);
+                break;
+
+            case "C1":
+                MarkBoard(btnC1, 0, 2);
+                break;
+            case "C2":
+                MarkBoard(btnC2, 1, 2);
+                break;
+            case "C3":
+                MarkBoard(btnC3, 2, 2);
+                break;
+            case "C4":
+                MarkBoard(btnC4, 3, 2);
+                break;
+            case "C5":
+                MarkBoard(btnC5, 4, 2);
+                break;
+
+            case "D1":
+                MarkBoard(btnD1, 0, 3);
+                break;
+            case "D2":
+                MarkBoard(btnD2, 1, 3);
+                break;
+            case "D3":
+                MarkBoard(btnD3, 2, 3);
+                break;
+            case "D4":
+                MarkBoard(btnD4, 3, 3);
+                break;
+            case "D5":
+                MarkBoard(btnD5, 4, 3);
+                break;
+
+            case "E1":
+                MarkBoard(btnE1, 0, 4);
+                break;
+            case "E2":
+                MarkBoard(btnE2, 1, 4);
+                break;
+            case "E3":
+                MarkBoard(btnE3, 2, 4);
+                break;
+            case "E4":
+                MarkBoard(btnE4, 3, 4);
+                break;
+            case "E5":
+                MarkBoard(btnE5, 4, 4);
+                break;
+            default:
+                Toast.makeText(this,
+                        "Invalid command.",
+                        Toast.LENGTH_SHORT).show();
+                break;
+
+        }
+
+    }
+
+    protected String getCommand () {
+        return editCommand.getText().toString();
     }
 
     protected void MarkBoard(Button btn, int row, int column) {
@@ -288,19 +395,23 @@ public class Board extends AppCompatActivity
                     Toast.makeText(this,
                             "It is a HIT.",
                             Toast.LENGTH_SHORT).show();
+                    polly.ReadText("It is a HIT!");
                 }
                 else {
                     btn.setText("Miss");
                     Toast.makeText(this,
                             "It is a MISS.",
                             Toast.LENGTH_SHORT).show();
+                    polly.ReadText("It is a MISS!");
                 }
             }
+            labelAmmo.setText(Integer.toString(board.getAmmoAvailable()));
         }
         else {
             Toast.makeText(this,
                     "Game Over. Start a new game.",
                     Toast.LENGTH_SHORT).show();
+            polly.ReadText("GAME OVER!");
         }
     }
 
