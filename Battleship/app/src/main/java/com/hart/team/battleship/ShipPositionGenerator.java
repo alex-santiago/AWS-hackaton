@@ -19,10 +19,10 @@ public class ShipPositionGenerator {
         this.matrix_columns = boardColumns;
     }
 
-    public void RandomizePositions() {
-
+    public Ship[] RandomizePositions() {
+        int direction;
         for (int i=0; i<4; i+=2) {
-            int direction = rand.nextInt(2) + 1;
+            direction = rand.nextInt(2) + 1;
             String[] placeResult;
 
             if (direction == 1) //vertical
@@ -36,6 +36,13 @@ public class ShipPositionGenerator {
                  ship2 = placeResult;
             }
         }
+
+        Ship ship1 = new Ship(2, this.ship1);
+        Ship ship2 = new Ship(2, this.ship2);
+
+        return new Ship[]{ship1, ship2};
+
+
     }
 
     private String[] PlaceShip(boolean vertical, int positionNumber) {
@@ -49,28 +56,28 @@ public class ShipPositionGenerator {
             column = rand.nextInt(5) + 1;
             row = rand.nextInt(5) + 1;
             if(vertical)
-                position = String.format("%s%s", column, row);
+                position = String.format("%s,%s", column, row);
             else
-                position = String.format("%s%s", row, column);
+                position = String.format("%s,%s", row, column);
         } while (IsPositionFree(position) == false);
 
-        ship[positionNumber] = position;
+        ship[0] = position;
         fullSpots[positionNumber] = position;
         positionNumber++;
         if(row == 5) {
             if(vertical)
-                position = String.format("%s%s", column, row-1);
+                position = String.format("%s,%s", column, row-1);
             else
-                position = String.format("%s%s", row, column-1);
+                position = String.format("%s,%s", row, column-1);
 
-            ship[positionNumber] = position;
+            ship[1] = position;
         }
         else {
             if(vertical)
-                position = String.format("%s%s", column, row+1);
+                position = String.format("%s,%s", column, row+1);
             else
-                position = String.format("%s%s", row, column+1);
-            ship[positionNumber] = position;
+                position = String.format("%s,%s", row, column+1);
+            ship[1] = position;
         }
 
         fullSpots[positionNumber] = position;
