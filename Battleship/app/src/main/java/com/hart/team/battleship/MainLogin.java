@@ -36,6 +36,9 @@ public class MainLogin extends AppCompatActivity
 
         AmazonPolly test = new AmazonPolly(getApplicationContext());
         //test.ReadText("HELLO WORLD");
+
+        ShipPositionGenerator position = new ShipPositionGenerator(5,5);
+        position.RandomizePositions();
     }
 
     @Override
