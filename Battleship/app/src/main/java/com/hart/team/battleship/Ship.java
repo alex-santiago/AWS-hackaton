@@ -30,7 +30,11 @@ public class Ship {
 
     public int Hits;
 
-    public boolean GotHit(int row, int column) {
+    public boolean GotHit() {
+        return Hits > 0;
+    }
+
+    public boolean ExecuteHit(int row, int column) {
         String hit = row+","+column;
         if(Arrays.asList(ShipPositions).contains(hit)){
             Hits++;
