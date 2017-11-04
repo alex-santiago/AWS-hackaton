@@ -8,6 +8,7 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -37,25 +38,25 @@ import java.io.Serializable;
 import java.net.URL;
 import java.util.List;
 
-public class AmazonPolly extends Activity {
+public class AmazonPolly {
 
     private static final String TAG = "Polly";
-    private static final Regions MY_REGION = Regions.US_EAST_2;
+    private static final Regions MY_REGION = Regions.US_WEST_2;
     CognitoCachingCredentialsProvider credentialsProvider;
 
     private AmazonPollyPresigningClient client;
-    private static final String COGNITO_POOL_ID = "CHANGEME";
-    MediaPlayer mediaPlayer;
+    private static final String COGNITO_POOL_ID =  "us-west-2:93372e7b-f68d-4883-b1eb-d810a79008a9";
+    MediaPlayer mediaPlayer = new MediaPlayer();
 
-    public AmazonPolly() {
+    public AmazonPolly(Context context) {
 
-        initPollyClient();
+        initPollyClient(context);
     }
 
-    void initPollyClient() {
+    void initPollyClient(Context context) {
         // Initialize the Amazon Cognito credentials provider.
         credentialsProvider = new CognitoCachingCredentialsProvider(
-                getApplicationContext(),
+                context,
                 COGNITO_POOL_ID,
                 MY_REGION
         );
@@ -65,21 +66,28 @@ public class AmazonPolly extends Activity {
     }
 
     public void ReadText(String text) {
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 
+        StrictMode.setThreadPolicy(policy);
+        // Create describe voices request.
+        DescribeVoicesRequest describeVoicesRequest = new DescribeVoicesRequest();
 
+        // Synchronously ask Amazon Polly to describe available TTS voices.
+        DescribeVoicesResult describeVoicesResult = client.describeVoices(describeVoicesRequest);
+        List<Voice> voices = describeVoicesResult.getVoices();
 
         SynthesizeSpeechPresignRequest synthesizeSpeechPresignRequest =
                 new SynthesizeSpeechPresignRequest()
                         // Set text to synthesize.
                         .withText(text)
                         // Set voice selected by the user.
-                        .withVoiceId("Joanna")
+                        .withVoiceId(voices.get(0).getId())
                         // Set format to MP3.
                         .withOutputFormat(OutputFormat.Mp3);
 
         // Get the presigned URL for synthesized speech audio stream.
         URL presignedSynthesizeSpeechUrl = client.getPresignedSynthesizeSpeechUrl(synthesizeSpeechPresignRequest);
-
+        setupNewMediaPlayer();
         // Create a media player to play the synthesized audio stream.
         if (mediaPlayer.isPlaying()) {
             setupNewMediaPlayer();
@@ -123,4 +131,6 @@ public class AmazonPolly extends Activity {
             }
         });
     }
+
+
 }
