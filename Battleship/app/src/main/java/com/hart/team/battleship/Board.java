@@ -284,7 +284,7 @@ public class Board extends AppCompatActivity
                 board.fireAtPosition(row, column);
                 if (board.itIsAHit(row, column)) {
                     btn.setText("HIT");
-                    labelScore.setText(board.getUserScore());
+                    labelScore.setText(Integer.toString(board.getUserScore()));
                     Toast.makeText(this,
                             "It is a HIT.",
                             Toast.LENGTH_SHORT).show();

@@ -29,7 +29,7 @@ public class Ship {
         return (Hits.contains(ShipPositions[0]) && Hits.contains(ShipPositions[1]));
     }
 
-    public ArrayList<String> Hits;
+    public ArrayList<String> Hits = new ArrayList<>();
 
     public boolean GotHit(int row, int column) {
         String hit = row+","+column;
