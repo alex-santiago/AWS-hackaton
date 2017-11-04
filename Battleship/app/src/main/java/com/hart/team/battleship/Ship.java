@@ -25,19 +25,16 @@ public class Ship {
     public String[] ShipPositions;
 
     public boolean IsDestroyed() {
-        return Hits == this._shipSize;
+
+        return (Hits.contains(ShipPositions[0]) && Hits.contains(ShipPositions[1]));
     }
 
-    public int Hits;
+    public ArrayList<String> Hits;
 
-    public boolean GotHit() {
-        return Hits > 0;
-    }
-
-    public boolean ExecuteHit(int row, int column) {
+    public boolean GotHit(int row, int column) {
         String hit = row+","+column;
         if(Arrays.asList(ShipPositions).contains(hit)){
-            Hits++;
+            Hits.add(hit);
             return true;
         }
         else
