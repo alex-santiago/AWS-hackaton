@@ -53,8 +53,8 @@ public class ShipPositionGenerator {
         String[] ship={"",""};
 
         do {
-            column = rand.nextInt(this.matrix_columns);
-            row = rand.nextInt(this.matrix_rows);
+            column = rand.nextInt(this.matrix_columns-1);
+            row = rand.nextInt(this.matrix_rows-1);
             if(vertical)
                 position = String.format("%s,%s", column, row);
             else
@@ -87,7 +87,7 @@ public class ShipPositionGenerator {
     private boolean IsPositionFree(String position) {
 
         for (int i=0; i<5; i++) {
-            if(fullSpots[i] == position) {
+            if(fullSpots[i].toString() == position) {
                 return false;
             }
         }
