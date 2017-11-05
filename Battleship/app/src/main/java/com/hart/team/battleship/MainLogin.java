@@ -18,9 +18,6 @@ public class MainLogin extends AppCompatActivity
     private Button btnLogin;
     private Button btnSignup;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,10 +30,6 @@ public class MainLogin extends AppCompatActivity
 
         btnLogin.setOnClickListener(this);
         btnSignup.setOnClickListener(this);
-
-        AmazonPolly test = new AmazonPolly(getApplicationContext());
-        //test.ReadText("HELLO WORLD");
-
 
     }
 
