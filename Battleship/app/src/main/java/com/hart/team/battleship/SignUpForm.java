@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class SignUp extends AppCompatActivity
+public class SignUpForm extends AppCompatActivity
     implements View.OnClickListener {
 
     private EditText loginEmail;

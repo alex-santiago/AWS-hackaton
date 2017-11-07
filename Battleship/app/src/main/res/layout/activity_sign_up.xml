@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_vertical_margin"
     android:paddingTop="@dimen/activity_horizontal_margin"
-    tools:context="com.hart.team.battleship.SignUp">
+    tools:context="com.hart.team.battleship.SignUpForm">
 
     <TextView
         android:id="@+id/textView2"

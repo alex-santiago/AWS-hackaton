@@ -16,9 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignUp">
+        <activity android:name=".SignUpForm">
             <intent-filter>
-                <action android:name="com.hart.team.battleship.SignUp" />
+                <action android:name="com.hart.team.battleship.SignUpForm" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

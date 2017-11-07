@@ -77,7 +77,7 @@ public class MainLogin extends AppCompatActivity
                 "Sign-up user",
                 Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent("com.hart.team.battleship.SignUp");
+        Intent intent = new Intent("com.hart.team.battleship.SignUpForm");
         startActivity(intent);
     }
 }
